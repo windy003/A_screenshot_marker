@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(del \"D:\\\\files\\\\projects\\\\tmp\\\\ScreenAnnotation\\\\app\\\\src\\\\main\\\\res\\\\drawable\\\\ic_launcher_foreground.xml\" \"D:\\\\files\\\\projects\\\\tmp\\\\ScreenAnnotation\\\\app\\\\src\\\\main\\\\res\\\\values\\\\ic_launcher_background.xml\")",
+      "Bash(del \"D:\\\\files\\\\projects\\\\tmp\\\\ScreenAnnotation\\\\app\\\\src\\\\main\\\\java\\\\com\\\\example\\\\screenannotation\\\\ScreenCaptureManager.kt\")"
+    ]
+  }
+}

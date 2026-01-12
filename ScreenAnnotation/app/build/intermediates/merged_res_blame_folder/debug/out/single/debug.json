@@ -1,0 +1,82 @@
+[
+    {
+        "merged": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-merged_res-31:\\layout_overlay_toolbar.xml.flat",
+        "source": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-main-33:\\layout\\overlay_toolbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-merged_res-31:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-main-33:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-merged_res-31:\\drawable_ic_clear.xml.flat",
+        "source": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-main-33:\\drawable\\ic_clear.xml"
+    },
+    {
+        "merged": "com.example.screenannotation.app-merged_res-31:/drawable_ic_hide.xml.flat",
+        "source": "com.example.screenannotation.app-main-33:/drawable/ic_hide.xml"
+    },
+    {
+        "merged": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-merged_res-31:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-main-33:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-merged_res-31:\\mipmap-hdpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-main-33:\\mipmap-hdpi\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-merged_res-31:\\drawable_ic_rect.xml.flat",
+        "source": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-main-33:\\drawable\\ic_rect.xml"
+    },
+    {
+        "merged": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-merged_res-31:\\drawable_toolbar_background.xml.flat",
+        "source": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-main-33:\\drawable\\toolbar_background.xml"
+    },
+    {
+        "merged": "com.example.screenannotation.app-merged_res-31:/layout_activity_main.xml.flat",
+        "source": "com.example.screenannotation.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.screenannotation.app-merged_res-31:/drawable_ic_show.xml.flat",
+        "source": "com.example.screenannotation.app-main-33:/drawable/ic_show.xml"
+    },
+    {
+        "merged": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-merged_res-31:\\drawable_ic_edit.xml.flat",
+        "source": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-main-33:\\drawable\\ic_edit.xml"
+    },
+    {
+        "merged": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-merged_res-31:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-main-33:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-merged_res-31:\\drawable_ic_arrow.xml.flat",
+        "source": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-main-33:\\drawable\\ic_arrow.xml"
+    },
+    {
+        "merged": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-merged_res-31:\\drawable_ic_close.xml.flat",
+        "source": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-main-33:\\drawable\\ic_close.xml"
+    },
+    {
+        "merged": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-merged_res-31:\\mipmap-hdpi_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-main-33:\\mipmap-hdpi\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.screenannotation.app-merged_res-31:/layout_overlay_toolbar.xml.flat",
+        "source": "com.example.screenannotation.app-main-33:/layout/overlay_toolbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-merged_res-31:\\drawable_ic_drag_handle.xml.flat",
+        "source": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-main-33:\\drawable\\ic_drag_handle.xml"
+    },
+    {
+        "merged": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-merged_res-31:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-main-33:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-merged_res-31:\\drawable_ic_save.xml.flat",
+        "source": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-main-33:\\drawable\\ic_save.xml"
+    },
+    {
+        "merged": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-merged_res-31:\\drawable_btn_background.xml.flat",
+        "source": "C:\\Users\\92892\\.gradle\\daemon\\8.2\\com.example.screenannotation.app-main-33:\\drawable\\btn_background.xml"
+    }
+]

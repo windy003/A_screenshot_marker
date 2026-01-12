@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#4CAF50</color>
+    <color name="black">#FF000000</color>
+    <color name="ic_launcher_background">#FF5722</color>
+    <color name="primary">#FF5722</color>
+    <color name="primary_dark">#E64A19</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">屏幕标注</string>
+    <string name="clear">清除</string>
+    <string name="close">关闭</string>
+    <string name="draw_arrow">画箭头</string>
+    <string name="draw_rect">画方框</string>
+    <string name="grant_permission">授予悬浮窗权限</string>
+    <string name="hide_toolbar">隐藏工具栏</string>
+    <string name="need_overlay_permission">请先打开应用授予悬浮窗权限</string>
+    <string name="notification_channel_desc">显示标注工具运行状态</string>
+    <string name="notification_channel_name">屏幕标注服务</string>
+    <string name="notification_text">点击磁贴或通知可关闭</string>
+    <string name="notification_title">屏幕标注工具运行中</string>
+    <string name="permission_denied_toast">权限被拒绝，无法使用标注功能</string>
+    <string name="permission_granted">权限已授予，可以使用快速设置磁贴启动标注</string>
+    <string name="permission_granted_button">权限已授予</string>
+    <string name="permission_granted_toast">悬浮窗权限已授予</string>
+    <string name="permission_required">需要悬浮窗权限才能使用标注功能</string>
+    <string name="show_toolbar">显示工具栏</string>
+    <string name="stop">停止</string>
+    <string name="tile_label">屏幕标注</string>
+    <string name="tile_label_active">标注中</string>
+    <string name="toolbar_hidden_hint">工具栏已隐藏，现在可以截屏</string>
+    <string name="usage_instructions">使用说明：\n\n1. 授予悬浮窗权限\n2. 下拉通知栏，编辑快速设置\n3. 添加\"屏幕标注\"磁贴\n4. 点击磁贴启动标注工具\n5. 选择箭头或方框工具绘制\n6. 点击隐藏按钮隐藏工具栏\n7. 使用系统截屏(音量-+电源键)</string>
+    <style name="Theme.ScreenAnnotation" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+</resources>
