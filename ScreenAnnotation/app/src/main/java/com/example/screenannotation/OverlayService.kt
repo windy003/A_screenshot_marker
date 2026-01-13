@@ -256,11 +256,13 @@ class OverlayService : Service() {
         btnArrow?.setOnClickListener {
             setDrawingMode(DrawingView.Mode.ARROW)
             updateButtonStates(btnArrow, btnRect)
+            hideToolbar(disableDrawing = false)
         }
 
         btnRect?.setOnClickListener {
             setDrawingMode(DrawingView.Mode.RECTANGLE)
             updateButtonStates(btnRect, btnArrow)
+            hideToolbar(disableDrawing = false)
         }
 
         btnHide?.setOnClickListener {
@@ -277,16 +279,22 @@ class OverlayService : Service() {
     }
 
     private fun hideToolbar() {
+        hideToolbar(disableDrawing = true)
+    }
+
+    private fun hideToolbar(disableDrawing: Boolean) {
         isToolbarHidden = true
         toolbarView?.visibility = View.GONE
 
-        // 禁用绘图层触摸，保留图形显示
-        drawingParams?.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
-                WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or
-                WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or
-                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
-        drawingView?.let {
-            windowManager.updateViewLayout(it, drawingParams)
+        if (disableDrawing) {
+            // 禁用绘图层触摸，保留图形显示
+            drawingParams?.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
+                    WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or
+                    WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or
+                    WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
+            drawingView?.let {
+                windowManager.updateViewLayout(it, drawingParams)
+            }
         }
 
         // 显示恢复按钮
@@ -295,7 +303,9 @@ class OverlayService : Service() {
         showButton?.visibility = View.VISIBLE
         windowManager.updateViewLayout(showButton, showButtonParams)
 
-        Toast.makeText(this, R.string.toolbar_hidden_hint, Toast.LENGTH_SHORT).show()
+        if (disableDrawing) {
+            Toast.makeText(this, R.string.toolbar_hidden_hint, Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun showToolbar() {
