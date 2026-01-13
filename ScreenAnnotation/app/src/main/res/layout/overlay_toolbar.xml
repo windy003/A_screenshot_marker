@@ -40,6 +40,15 @@
         android:contentDescription="@string/draw_rect"
         android:alpha="0.5" />
 
+    <ImageButton
+        android:id="@+id/btnFreehand"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_freehand"
+        android:background="@drawable/btn_background"
+        android:contentDescription="@string/draw_freehand"
+        android:alpha="0.5" />
+
     <View
         android:layout_width="32dp"
         android:layout_height="1dp"

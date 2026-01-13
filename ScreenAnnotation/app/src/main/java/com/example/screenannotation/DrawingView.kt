@@ -16,7 +16,7 @@ import kotlin.math.sin
 class DrawingView(context: Context) : View(context) {
 
     enum class Mode {
-        NONE, ARROW, RECTANGLE
+        NONE, ARROW, RECTANGLE, FREEHAND
     }
 
     var currentMode: Mode = Mode.NONE
@@ -40,9 +40,23 @@ class DrawingView(context: Context) : View(context) {
         isAntiAlias = true
     }
 
+    // 细红线画笔
+    private val freehandPaint = Paint().apply {
+        color = Color.RED
+        strokeWidth = 3f  // 细线
+        style = Paint.Style.STROKE
+        isAntiAlias = true
+        strokeCap = Paint.Cap.ROUND
+        strokeJoin = Paint.Join.ROUND
+    }
+
+    // 当前正在绘制的自由线条路径
+    private var currentPath: Path? = null
+
     sealed class Shape {
         data class Arrow(val start: PointF, val end: PointF) : Shape()
         data class Rectangle(val start: PointF, val end: PointF) : Shape()
+        data class FreehandLine(val path: Path) : Shape()
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -57,12 +71,18 @@ class DrawingView(context: Context) : View(context) {
         currentShape?.let {
             drawShape(canvas, it)
         }
+
+        // 绘制当前正在绘制的自由线条
+        currentPath?.let {
+            canvas.drawPath(it, freehandPaint)
+        }
     }
 
     private fun drawShape(canvas: Canvas, shape: Shape) {
         when (shape) {
             is Shape.Arrow -> drawArrow(canvas, shape.start, shape.end)
             is Shape.Rectangle -> drawRectangle(canvas, shape.start, shape.end)
+            is Shape.FreehandLine -> canvas.drawPath(shape.path, freehandPaint)
         }
     }
 
@@ -101,13 +121,40 @@ class DrawingView(context: Context) : View(context) {
     override fun onTouchEvent(event: MotionEvent): Boolean {
         if (currentMode == Mode.NONE) return false
 
+        // 自由绘制模式的特殊处理
+        if (currentMode == Mode.FREEHAND) {
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    currentPath = Path().apply {
+                        moveTo(event.x, event.y)
+                    }
+                    return true
+                }
+                MotionEvent.ACTION_MOVE -> {
+                    currentPath?.lineTo(event.x, event.y)
+                    invalidate()
+                    return true
+                }
+                MotionEvent.ACTION_UP -> {
+                    currentPath?.let {
+                        shapes.add(Shape.FreehandLine(Path(it)))
+                    }
+                    currentPath = null
+                    invalidate()
+                    return true
+                }
+            }
+            return super.onTouchEvent(event)
+        }
+
+        // 箭头和矩形模式的处理
         when (event.action) {
             MotionEvent.ACTION_DOWN -> {
                 val start = PointF(event.x, event.y)
                 currentShape = when (currentMode) {
                     Mode.ARROW -> Shape.Arrow(start, start)
                     Mode.RECTANGLE -> Shape.Rectangle(start, start)
-                    Mode.NONE -> null
+                    else -> null
                 }
                 return true
             }
@@ -117,7 +164,7 @@ class DrawingView(context: Context) : View(context) {
                 currentShape = when (val shape = currentShape) {
                     is Shape.Arrow -> shape.copy(end = end)
                     is Shape.Rectangle -> shape.copy(end = end)
-                    null -> null
+                    else -> null
                 }
                 invalidate()
                 return true
@@ -138,6 +185,7 @@ class DrawingView(context: Context) : View(context) {
     fun clearDrawings() {
         shapes.clear()
         currentShape = null
+        currentPath = null
         invalidate()
     }
 

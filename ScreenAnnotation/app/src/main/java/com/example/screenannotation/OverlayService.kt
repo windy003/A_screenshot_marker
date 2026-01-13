@@ -221,6 +221,7 @@ class OverlayService : Service() {
     private fun setupToolbarButtons() {
         val btnArrow = toolbarView?.findViewById<ImageButton>(R.id.btnArrow)
         val btnRect = toolbarView?.findViewById<ImageButton>(R.id.btnRect)
+        val btnFreehand = toolbarView?.findViewById<ImageButton>(R.id.btnFreehand)
         val btnHide = toolbarView?.findViewById<ImageButton>(R.id.btnHide)
         val btnClear = toolbarView?.findViewById<ImageButton>(R.id.btnClear)
         val btnClose = toolbarView?.findViewById<ImageButton>(R.id.btnClose)
@@ -255,13 +256,19 @@ class OverlayService : Service() {
 
         btnArrow?.setOnClickListener {
             setDrawingMode(DrawingView.Mode.ARROW)
-            updateButtonStates(btnArrow, btnRect)
+            updateButtonStates(btnArrow, btnRect, btnFreehand)
             hideToolbar(disableDrawing = false)
         }
 
         btnRect?.setOnClickListener {
             setDrawingMode(DrawingView.Mode.RECTANGLE)
-            updateButtonStates(btnRect, btnArrow)
+            updateButtonStates(btnRect, btnArrow, btnFreehand)
+            hideToolbar(disableDrawing = false)
+        }
+
+        btnFreehand?.setOnClickListener {
+            setDrawingMode(DrawingView.Mode.FREEHAND)
+            updateButtonStates(btnFreehand, btnArrow, btnRect)
             hideToolbar(disableDrawing = false)
         }
 
@@ -324,9 +331,9 @@ class OverlayService : Service() {
         }
     }
 
-    private fun updateButtonStates(active: ImageButton?, inactive: ImageButton?) {
+    private fun updateButtonStates(active: ImageButton?, vararg inactive: ImageButton?) {
         active?.alpha = 1.0f
-        inactive?.alpha = 0.5f
+        inactive.forEach { it?.alpha = 0.5f }
     }
 
     private fun setDrawingMode(mode: DrawingView.Mode) {
