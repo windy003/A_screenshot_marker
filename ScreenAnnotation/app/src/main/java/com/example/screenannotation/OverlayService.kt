@@ -141,7 +141,7 @@ class OverlayService : Service() {
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
             PixelFormat.TRANSLUCENT
         ).apply {
-            gravity = Gravity.TOP or Gravity.END
+            gravity = Gravity.BOTTOM or Gravity.START
             x = 20
             y = 200
         }
@@ -168,7 +168,7 @@ class OverlayService : Service() {
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
             PixelFormat.TRANSLUCENT
         ).apply {
-            gravity = Gravity.TOP or Gravity.END
+            gravity = Gravity.BOTTOM or Gravity.START
             x = 20
             y = 200
         }
@@ -198,8 +198,8 @@ class OverlayService : Service() {
                     }
                     if (isDragging) {
                         showButtonParams?.let { params ->
-                            params.x = initialX - dx.toInt()
-                            params.y = initialY + dy.toInt()
+                            params.x = initialX + dx.toInt()
+                            params.y = initialY - dy.toInt()
                             windowManager.updateViewLayout(showButton, params)
                         }
                     }
@@ -243,8 +243,8 @@ class OverlayService : Service() {
                 }
                 MotionEvent.ACTION_MOVE -> {
                     toolbarParams?.let { params ->
-                        params.x = initialX - (event.rawX - initialTouchX).toInt()
-                        params.y = initialY + (event.rawY - initialTouchY).toInt()
+                        params.x = initialX + (event.rawX - initialTouchX).toInt()
+                        params.y = initialY - (event.rawY - initialTouchY).toInt()
                         windowManager.updateViewLayout(toolbarView, params)
                     }
                     true
