@@ -29,13 +29,17 @@ class AnnotationTileService : TileService() {
         }
 
         // 切换悬浮窗服务状态
+        val willBeRunning: Boolean
         if (OverlayService.isRunning) {
             stopOverlayService()
+            willBeRunning = false
         } else {
             startOverlayService()
+            willBeRunning = true
         }
 
-        updateTileState()
+        // 乐观更新：服务启动/停止是异步的，直接根据预期状态更新磁贴
+        updateTileState(willBeRunning)
     }
 
     private fun startOverlayService() {
@@ -52,9 +56,9 @@ class AnnotationTileService : TileService() {
         stopService(intent)
     }
 
-    private fun updateTileState() {
+    private fun updateTileState(isActive: Boolean = OverlayService.isRunning) {
         qsTile?.let { tile ->
-            if (OverlayService.isRunning) {
+            if (isActive) {
                 tile.state = Tile.STATE_ACTIVE
                 tile.label = getString(R.string.tile_label_active)
             } else {
