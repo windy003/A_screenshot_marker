@@ -141,7 +141,7 @@ class OverlayService : Service() {
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
             PixelFormat.TRANSLUCENT
         ).apply {
-            gravity = Gravity.BOTTOM or Gravity.START
+            gravity = Gravity.BOTTOM or Gravity.END
             x = 20
             y = 200
         }
@@ -168,7 +168,7 @@ class OverlayService : Service() {
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
             PixelFormat.TRANSLUCENT
         ).apply {
-            gravity = Gravity.BOTTOM or Gravity.START
+            gravity = Gravity.BOTTOM or Gravity.END
             x = 20
             y = 200
         }
